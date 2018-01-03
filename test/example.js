@@ -1,8 +1,5 @@
-// TODO Update Ansible to install Google Chrome on `atlas.sword` automatically
-// TODO Use page objects <http://nightwatchjs.org/guide#page-objects>
-
-describe.only( 'The canary test', function() {
-    context( 'for Nightwatch', function() {
+describe( 'User management URLs', function() {
+    context( '/system/register', function() {
         before( function( browser, done ) {
             done();
         } );
@@ -21,11 +18,11 @@ describe.only( 'The canary test', function() {
             done();
         } );
 
-        it( 'works as expected', function( browser ) {
+        it( 'has a field for the user\'s email address', function( browser ) {
             browser
                 .url( 'http://localhost:2765/system/register' )
                 .waitForElementVisible( 'body', 1000 )
-                // .assert.elementPresent( '#user-email' )
+                .assert.elementPresent( '@emailField' )
         } );
     } );
 } );
