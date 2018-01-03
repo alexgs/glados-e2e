@@ -1,11 +1,23 @@
 {
-    "presets": [
-        "stage-3"
-    ],
-    "plugins": [
-        "syntax-trailing-function-commas",
-        "transform-async-to-generator",
-        "transform-es2015-modules-commonjs",
-        "transform-exponentiation-operator"
-    ]
+    "env": {
+        "development": {
+            "presets": [
+                "stage-3"
+            ],
+            "plugins": [
+                "syntax-trailing-function-commas",
+                "transform-async-to-generator",
+                "transform-es2015-modules-commonjs",
+                "transform-exponentiation-operator"
+            ]
+        },
+        "nightwatch": {
+            "presets": [
+                "es2015"
+            ],
+            "plugins": [
+                "add-module-exports"
+            ]
+        }
+    }
 }

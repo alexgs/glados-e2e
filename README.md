@@ -1,30 +1,37 @@
-# Express App Prototype
+# Glados End-to-End Tests
 
 This repository contains a basic Express application that uses the [Glados][8] library. It also contains automated end-to-end tests that verify the correct functioning of the library in a production-type environment (i.e. working with an actual Auth0 application). It was forked from the [Express App Prototype][9] library.
 
 [8]: https://github.com/philgs/glados
 [9]: https://github.com/philgs/express-app-prototype
 
-# Remnants of the Original README
+## Requirements
 
-## Goals
+You must be running a Linux operating system. This test suite has only been tested on Ubuntu 16.04.3 LTS. 
 
-1. Server-hosted login page (or redirect to Auth0)
-1. Server-side callback URL, for OAuth2 "authorization grant" flow
-1. Create a basic user profile, based on the OAuth2 `id_token`.
-1. Create an opaque, secure session token with authenticated encryption; store the session token in a cookie on the browser
-1. Redirect to a React app that can use the opaque token to authenticate to an API
+You will also need Node.js, **npm**, and a Java 8 runtime engine. The official Oracle Java is highly recommended.
 
-## Considerations
+## Installation
 
-- There are potentially three separate Express apps on the server, separated by the first segment of the URL path
-    - **`/login`**, which hosts the pages related to the login flow
-    - **`/api`**, which provides a RESTful or GraphQL API
-    - **`/app`**, which server the React app
-- There may be a fourth app that lives at the root URL (and sibling paths that are not part of the above apps), this would be the marketing or public website for the server.
-- This prototype is going to need some sort of data store, to hold the user profiles.
+There are a couple of steps beyond the typical `npm install`.
 
-## Installation and Usage
+### Google Chrome
+
+Follow [these instructions][10] on _Ask Ubuntu_.
+
+[10]: https://askubuntu.com/a/510186
+
+### Selenium
+
+After running `npm install`, run
+
+```bash
+./node_modules/.bin/selenium-standalone install
+```
+
+**Reference:** [Selenium Standalone][11]
+
+[11]]: https://www.npmjs.com/package/selenium-standalone
 
 ### Docker
 
