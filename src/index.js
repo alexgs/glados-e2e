@@ -58,9 +58,7 @@ app.use( '/static', express.static( path.resolve( appRoot, 'static' ) ) );
 // --- CONFIGURE ROUTES ---
 
 app.use( '/', routes.root );
-app.use( '/login', routes.login );
-app.use( '/glados', routes.glados );
-app.use( '/spike', routes.spike );
+app.use( '/login', routes.glados );
 
 
 // --- ERROR HANDLERS ---
