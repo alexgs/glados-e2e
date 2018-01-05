@@ -22,8 +22,6 @@ describe( 'An Express app with the Glados module', function() {
 
             example.navigate()
                 .waitForElementVisible( 'body', 1000 )
-                .assert
-                .visible( '@welcomeText' )
-            ;
+                .expect.element( '@welcomeText' ).to.be.visible;
         } );
 } );

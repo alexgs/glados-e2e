@@ -36,8 +36,7 @@ describe.skip( 'The canary test for Nightwatch', function() {
 
         example.navigate()
             .waitForElementVisible( 'body', 1000 )
-            .assert
-            .visible( '@welcomeText' )
+            .assert.visible( '@welcomeText' )
         ;
     } );
 } );
