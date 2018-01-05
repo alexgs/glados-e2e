@@ -1,5 +1,4 @@
-describe( 'User management URLs', function() {
-    context( '/system/register', function() {
+describe( 'An Express app with the Glados module', function() {
         before( function( browser, done ) {
             done();
         } );
@@ -18,11 +17,13 @@ describe( 'User management URLs', function() {
             done();
         } );
 
-        it( 'has a field for the user\'s email address', function( browser ) {
-            browser
-                .url( 'http://localhost:2765/system/register' )
+        it( 'works with a page object', function( browser ) {
+            const example = browser.page.example();
+
+            example.navigate()
                 .waitForElementVisible( 'body', 1000 )
-                .assert.elementPresent( '@emailField' )
+                .assert
+                .visible( '@welcomeText' )
+            ;
         } );
-    } );
 } );
