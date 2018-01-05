@@ -22,6 +22,12 @@ This repository contains a basic Express application that uses the [Glados][8] l
 
 [10]: https://www.npmjs.com/package/concurrently
 
+### Selectively running tests
+
+The Nightwatch documentation contains instructions on using stock or vanilla Mocha as a test-runner (rather than the modified version of Mocha that is included in Nightwatch). I was not able to get this to work, so there are no presets or shortcuts for only running certain tests. 
+
+Instead, this has to be configured manually, on individual tests, using Mocha's built-in `only` and `skip` methods. For example, `describe.skip( 'The cake', function() { ... } );` or `it.only( 'is a lie', function() { ... } );`.
+
 ## Requirements
 
 You must be running a Linux operating system. This test suite has only been tested on Ubuntu 16.04.3 LTS. 

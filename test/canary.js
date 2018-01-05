@@ -1,4 +1,4 @@
-describe.only( 'The canary test for Nightwatch', function() {
+describe.skip( 'The canary test for Nightwatch', function() {
     before( function( browser, done ) {
         done();
     } );

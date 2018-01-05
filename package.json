@@ -9,7 +9,6 @@
     "couchbase:start": "docker start db",
     "couchbase:stop": "docker stop db",
     "express": "spawn nodemon ./scripts/launch-dev-server.js --exec babel-node",
-    "nightwatch": "BABEL_ENV=nightwatch spawn nightwatch",
     "selenium:install": "selenium-standalone install --config=selenium.json",
     "selenium:silent": "node ./scripts/silent-selenium.js",
     "selenium:start": "selenium-standalone start --config=selenium.json"
