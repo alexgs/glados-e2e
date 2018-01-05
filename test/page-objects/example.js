@@ -1,6 +1,7 @@
 module.exports = {
-    url: () => this.api.launchUrl + '/system/register',
+    url: () => process.env.NIGHTWATCH_HOME,
     elements: {
-        emailField: '#user-email'
+        loginLink: '#login-link',
+        welcomeText: '#welcome'
     }
 };

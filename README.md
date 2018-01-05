@@ -5,6 +5,14 @@ This repository contains a basic Express application that uses the [Glados][8] l
 [8]: https://github.com/philgs/glados
 [9]: https://github.com/philgs/express-app-prototype
 
+## Usage
+
+**IMPORTANT!** Be sure that you have satisfied the requirements, as detailed below, before running _any_ commands in this section.
+
+1. Start the Express server: `npm start`
+1. Start the Selenium server: `npm run selenium:start`
+1. Run the tests: `npm test`
+
 ## Requirements
 
 You must be running a Linux operating system. This test suite has only been tested on Ubuntu 16.04.3 LTS. 
@@ -15,23 +23,13 @@ You will also need Node.js, **npm**, and a Java 8 runtime engine. The official O
 
 There are a couple of steps beyond the typical `npm install`.
 
-### Google Chrome
+### Firefox
 
-Follow [these instructions][10] on _Ask Ubuntu_.
-
-[10]: https://askubuntu.com/a/510186
+You will need to install Firefox v57 or newer. On Ubuntu, this is simply `sudo apt install firefox`.
 
 ### Selenium
 
-After running `npm install`, run
-
-```bash
-./node_modules/.bin/selenium-standalone install
-```
-
-**Reference:** [Selenium Standalone][11]
-
-[11]]: https://www.npmjs.com/package/selenium-standalone
+After doing `npm install`, run `npm run selenium:install`.
 
 ### Docker
 

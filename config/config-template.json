@@ -6,6 +6,7 @@
         "AUTH0_DOMAIN": "Auth0 domain for this app, from the Auth0 dashboard",
         "DEBUG": "Value for the `DEBUG` environment variable; see https://www.npmjs.com/package/debug",
         "NODE_ENV": "development",
+        "NIGHTWATCH_HOME": "Root URL for Nightwatch tests",
         "PROTOTYPE_PORT": 8080,
         "SESSION_SECRET": "Absolute path to the .key file for signing session cookies",
         "SSL_CERT": "Absolute path to the server.crt file"

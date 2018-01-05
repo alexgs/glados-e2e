@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "spawn nodemon ./scripts/launch-dev-server.js --exec babel-node",
-    "test": "spawn mocha",
-    "build": "babel src -d dist",
+    "test": "BABEL_ENV=nightwatch spawn nightwatch",
     "couchbase:start": "docker start db",
     "couchbase:stop": "docker stop db",
-    "nightwatch": "BABEL_ENV=nightwatch spawn nightwatch"
+    "nightwatch": "BABEL_ENV=nightwatch spawn nightwatch",
+    "selenium:install": "selenium-standalone install --config=selenium.json",
+    "selenium:start": "selenium-standalone start --config=selenium.json"
   },
   "repository": {
     "type": "git",

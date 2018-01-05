@@ -1,4 +1,4 @@
-describe( 'The canary test', function() {
+describe.only( 'The canary test', function() {
     context( 'for Nightwatch', function() {
         before( function( browser, done ) {
             done();
@@ -18,11 +18,28 @@ describe( 'The canary test', function() {
             done();
         } );
 
-        it( 'works as expected', function( browser ) {
+        it( 'works with the Google homepage', function( browser ) {
             browser
-                .url( 'http://localhost:2765/system/register' )
+                .url( 'https://www.google.com' )
                 .waitForElementVisible( 'body', 1000 )
-                // .assert.elementPresent( '#user-email' )
+                .expect.element( 'input[type=text]' ).to.be.visible;
+        } );
+
+        it( 'works with the dev server', function( browser ) {
+            browser
+                .url( process.env.NIGHTWATCH_HOME )
+                .waitForElementVisible( 'body', 1000 )
+                .expect.element( '#welcome' ).to.be.visible;
+        } );
+
+        it.skip( 'works with a page object', function( browser ) {
+            const example = browser.page.example();
+
+            example.navigate()
+                .waitForElementVisible( 'body', 1000 )
+                .assert
+                .visible( '@welcomeText' )
+            ;
         } );
     } );
 } );
