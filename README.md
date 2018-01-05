@@ -9,15 +9,24 @@ This repository contains a basic Express application that uses the [Glados][8] l
 
 **IMPORTANT!** Be sure that you have satisfied the requirements, as detailed below, before running _any_ commands in this section.
 
-1. Start the Express server: `npm start`
-1. Start the Selenium server: `npm run selenium:start`
+1. Start the Express server _and_ the Selenium server: `npm start`
 1. Run the tests: `npm test`
+
+**Please to Note:**
+
++ The `npm start` command will start Selenium in a "silent" mode, with all output suppressed.
++ If you need to see the Selenium output (e.g. for debugging), you will need to start the servers separately.
++ Use `npm run express` and `npm run selenium:start` in separate terminal.
++ Use  `npm run express && npm run selenium:start` in a single terminal. This will give you interleaved output.
++ More advanced configurations are possible with the [concurrently][10] module (which is already used for the "start" command).
+
+[10]: https://www.npmjs.com/package/concurrently
 
 ## Requirements
 
 You must be running a Linux operating system. This test suite has only been tested on Ubuntu 16.04.3 LTS. 
 
-You will also need Node.js, **npm**, and a Java 8 runtime engine. The official Oracle Java is highly recommended.
+You will also need Node.js, **npm**, and a Java 8 runtime engine. The official Oracle Java is highly recommended!
 
 ## Installation
 

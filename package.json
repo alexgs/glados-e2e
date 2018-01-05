@@ -4,12 +4,14 @@
   "description": "End-to-end testing suite for the Glados library",
   "main": "index.js",
   "scripts": {
-    "start": "spawn nodemon ./scripts/launch-dev-server.js --exec babel-node",
+    "start": "concurrently --raw \"npm run express\" \"npm run selenium:silent\"",
     "test": "BABEL_ENV=nightwatch spawn nightwatch",
     "couchbase:start": "docker start db",
     "couchbase:stop": "docker stop db",
+    "express": "spawn nodemon ./scripts/launch-dev-server.js --exec babel-node",
     "nightwatch": "BABEL_ENV=nightwatch spawn nightwatch",
     "selenium:install": "selenium-standalone install --config=selenium.json",
+    "selenium:silent": "node ./scripts/silent-selenium.js",
     "selenium:start": "selenium-standalone start --config=selenium.json"
   },
   "repository": {
@@ -44,6 +46,7 @@
     "body-parser": "^1.17.1",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
+    "concurrently": "^3.5.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
