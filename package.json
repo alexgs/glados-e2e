@@ -13,6 +13,23 @@
     "selenium:silent": "node ./scripts/silent-selenium.js",
     "selenium:start": "selenium-standalone start --config=selenium.json"
   },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "flow",
+      "stage-3"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/philgs/glados-e2e.git"
@@ -32,16 +49,12 @@
     "@philgs/spawn": "^1.0.0",
     "@types/chai": "^4.0.1",
     "@types/mocha": "^2.2.41",
-    "babel-cli": "^6.24.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
-    "babel-plugin-transform-exponentiation-operator": "^6.24.1",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
-    "babel-register": "^6.24.1",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.17.1",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
