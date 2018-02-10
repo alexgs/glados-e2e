@@ -34,7 +34,8 @@
                 "acceptInsecureCerts": true,
                 "moz:firefoxOptions": {
                     "args": ["-headless"]
-                }
+                },
+                "moz:webdriverClick": true
             }
         }
     }
