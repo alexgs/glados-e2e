@@ -14,21 +14,33 @@
     "selenium:start": "selenium-standalone start --config=selenium.json"
   },
   "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ],
-      "flow",
-      "stage-3"
-    ],
-    "plugins": [
-      "transform-class-properties"
-    ]
+    "env": {
+      "development": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "node": "current"
+              }
+            }
+          ],
+          "flow",
+          "stage-3"
+        ],
+        "plugins": [
+          "transform-class-properties"
+        ]
+      },
+      "nightwatch": {
+        "presets": [
+          "es2015"
+        ],
+        "plugins": [
+          "add-module-exports"
+        ]
+      }
+    }
   },
   "repository": {
     "type": "git",

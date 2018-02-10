@@ -21,14 +21,22 @@ app.set( 'view engine', 'ejs' );
 
 // --- CONFIGURE GLADOS ---
 
-const gladosOptions = {
-    domain: process.env.AUTH0_DOMAIN,
-    clientId: process.env.AUTH0_CLIENT_ID,
-    clientSecret: process.env.AUTH0_CLIENT_SECRET,
-    callbackUrl: process.env.AUTH0_CALLBACK_URL
-};
-glados.configureOAuth2( gladosOptions, app );
-glados.configureSessionStore( app.locals );
+glados.configure( {
+    expressApp: app,
+    oauth: {
+        domain: process.env.AUTH0_DOMAIN,
+        clientId: process.env.AUTH0_CLIENT_ID,
+        clientSecret: process.env.AUTH0_CLIENT_SECRET,
+        callbackUrl: process.env.AUTH0_CALLBACK_URL
+    },
+    userStore: {
+        getOrCreate: ( userData ) => ({
+            email: userData.email,
+            providers: [ userData.providerId ],
+            id: 27
+        })
+    }
+} );
 
 
 // --- CONFIGURE LOGGING ---

@@ -1,6 +1,4 @@
-const assert = require( 'assert' );
 const ms = require( 'ms' );
-const path = require( 'path' );
 
 const halfSecond = 500;
 const oneSecond = ms( '1s' );
